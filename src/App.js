@@ -13,9 +13,7 @@ function App() {
       <Nav></Nav>
       <main>
           <About></About>
-        ) : (
           <ContactForm></ContactForm>
-        )
       </main>
       <Footer></Footer>
     </div>
