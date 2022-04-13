@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Navigation from "./Navigation";
-import About from "./About";
-import Contact from "./Contact";
-import Portfolio from "./Portfolio";
-import Resume from "./Resume";
+import Nav from "../Nav";
+import About from "../About";
+import Contact from "../Contact";
+import Portfolio from "../Portfolio";
+import Resume from "../Resume";
 
 function Header() {
   const [currentPage, handlePageChange] = useState("About");
@@ -38,7 +38,7 @@ function Header() {
         </div>
       </nav>
       {/* Pass the state value and the setter as props to NavTabs */}
-      <Navigation
+      <Nav
         currentPage={currentPage}
         handlePageChange={handlePageChange}
       />
