@@ -1,27 +1,31 @@
-import React from 'react';
+import React from "react";
 
-function Nav() {
+function Navigation(props) {
+  const tabs = ["About", "Portfolio", "Contact", "Resume"];
   return (
-    <header className="flex-row px-1">
-      <h1> Teresa Wohl </h1>
-      <nav>
-        <ul className="flex-row">
-          <li>
-            <a href="#about">About</a>
+    <div className="tabs is-centered">
+      <ul className="nav nav-tabs">
+        {tabs.map((tab) => (
+          <li
+            className={
+              props.currentPage === tab ? "nav-item is-active" : "nav-item"
+            }
+            key={tab}
+          >
+            <a
+              href={"#" + tab.toLowerCase()}
+              onClick={() => props.handlePageChange(tab)}
+              className={
+                props.currentPage === tab ? "nav-link active" : "nav-link"
+              }
+            >
+              {tab}
+            </a>
           </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-            </li>
-            <li>
-            <a href="#resume">Resume</a>
-            </li>
-          </ul>
-      </nav>
-    </header>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-export default Nav;
+export default Navigation;
